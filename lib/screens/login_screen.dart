@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'inventory_screen.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -97,9 +98,19 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 TextButton(
                   onPressed: () {
-                    // TODO: 회원가입 페이지 이동
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                    );
                   },
-                  child: const Text('아이디 만들기'),
+                  child: const Text('회원 가입'),
+                ),
+                const Text('|', style: TextStyle(color: Colors.grey)),
+                TextButton(
+                  onPressed: () {
+                    // TODO: 아이디 찾기 페이지 이동
+                  },
+                  child: const Text('아이디 찾기'),
                 ),
                 const Text('|', style: TextStyle(color: Colors.grey)),
                 TextButton(
