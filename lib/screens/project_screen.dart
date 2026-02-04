@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Item_add_screen.dart';
 
 class ProjectScreen extends StatelessWidget {
   final String projectName;
@@ -14,17 +15,22 @@ class ProjectScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: const [
-                Text('추가'),
-                SizedBox(width: 12),
-                Text('삭제'),
-                SizedBox(width: 12),
-                Text('변경'),
-              ],
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const ItemAddScreen(),
+                    ),
+                  );
+                },
+                child: const Text('추가'),
+              ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             const Text(
               '알림',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
